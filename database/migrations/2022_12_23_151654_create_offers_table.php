@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Ramsey\Uuid\Type\Integer;
 
 return new class extends Migration
 {
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->integer('install_price')->unsigned()->nullable()->default(0);
             $table->integer('monthly_price')->unsigned()->nullable()->default(0);
             $table->string('type_lm', 100)->nullable()->default('optic');
+            $table->integer('lm_checkup_id')->unsigned()->nullable();
             $table->bigInteger('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
         });
