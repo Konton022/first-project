@@ -32,9 +32,16 @@ class OfferController extends Controller
         dd('done');
     }
     public function update(){
-
+        $offer = Offer::find(3);
+        $offer->update([
+            'address' => 'Yekaterinburg, Elcina1',
+            'install_price' => 3000
+        ]);
+        dd('updated');
     }
     public function delete(){
-
+        $offer=Offer::find(9);
+        $offer->delete();
+        dd('deleted');
     }
 }

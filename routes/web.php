@@ -18,6 +18,9 @@ use App\Http\Controllers\OfferController;
 Route::get('/', [Controller::class, 'render']);
 Route::get('/offers', [OfferController::class, 'index']);
 Route::get('/offers/add', [OfferController::class, 'add']);
+Route::get('/offers/update', [OfferController::class, 'update']);
+Route::get('/offers/delete', [OfferController::class, 'delete']);
+
 
 
 // Route::get('/contacts', [ContactsController::class, 'render']);

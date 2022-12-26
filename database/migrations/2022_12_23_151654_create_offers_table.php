@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             $table->string('address', 255)->nullable()->default('text');
             $table->integer('install_price')->unsigned()->nullable()->default(0);
             $table->integer('monthly_price')->unsigned()->nullable()->default(0);
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->integer('lm_checkup_id')->unsigned()->nullable();
             $table->bigInteger('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
-            $table->softDeletes();
+            
         });
     }
 
