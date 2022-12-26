@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyProductController;
-use App\Http\Controllers\ContactsController;
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\VacationsController;
-use App\Http\Controllers\MyNewController;
+use App\Http\Controllers\OfferController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +16,10 @@ use App\Http\Controllers\MyNewController;
 */
 
 Route::get('/', [Controller::class, 'render']);
+Route::get('/offers', [OfferController::class, 'index']);
+Route::get('/offers/add', [OfferController::class, 'add']);
 
-// Route::get('/products', [MyProductController::class, 'render']);
+
 // Route::get('/contacts', [ContactsController::class, 'render']);
 // Route::get('/news', [NewsController::class, 'render']);
 // Route::get('/vacations', [VacationsController::class, 'render']);

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('lm_checkup_id')->unsigned()->nullable();
             $table->bigInteger('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 

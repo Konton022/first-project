@@ -18,7 +18,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name', 100)->unique()->nullable()->default('provider');
-            $table->boolean('is_allowed')->default(true);           
+            $table->boolean('is_allowed')->default(true);
+            $table->softDeletes();           
         });
     }
 

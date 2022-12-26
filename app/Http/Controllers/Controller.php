@@ -14,7 +14,7 @@ class Controller extends BaseController
 
     public function render()
     {
-        $json = Provider::find(1);
-        dd($json['created_at']);
+        $offers = Provider::all();
+        dd($offers);
     }
 }
