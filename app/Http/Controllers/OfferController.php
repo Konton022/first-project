@@ -7,7 +7,17 @@ use App\Models\Offer;
 
 class OfferController extends Controller
 {
-    
+    $offersArr = [
+        [
+            'address'=> '',
+            'customer' => '',
+            'install_price' => '',
+            'monthly_price' => '',
+            'type_lm'=> '',
+            'lm_checkup' => '',
+            'provider_id' => '',
+        ]
+        ];
     
 
     public function index(){

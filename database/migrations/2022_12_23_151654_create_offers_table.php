@@ -17,14 +17,16 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->softDeletes();
+            $table->string('customer', 128)->nullable();
             $table->string('address', 255)->nullable()->default('text');
             $table->integer('install_price')->unsigned()->nullable()->default(0);
             $table->integer('monthly_price')->unsigned()->nullable()->default(0);
-            $table->string('type_lm', 100)->nullable()->default('optic');
-            $table->integer('lm_checkup_id')->unsigned()->nullable();
+            $table->integer('type_lm_id', 100)->default('1');
+            $table->string('lm_checkup', 255)->unsigned()->default();
             $table->bigInteger('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
+            $table->foreign('type_lm_id')->references('id')->on('type_lm')->onDelete('cascade');
+            $table->softDeletes();
             
         });
     }

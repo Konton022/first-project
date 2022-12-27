@@ -10,5 +10,5 @@ class Offer extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'offers';
-    protected $guarded = [];
+    protected $guarded = false;
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ProviderController;
 
 
 /*
@@ -16,6 +17,8 @@ use App\Http\Controllers\OfferController;
 */
 
 Route::get('/', [Controller::class, 'render']);
+Route::get('/providers', [ProviderController::class, 'index']);
+Route::get('/providers/add', [ProviderController::class, 'add']);
 Route::get('/offers', [OfferController::class, 'index']);
 Route::get('/offers/add', [OfferController::class, 'add']);
 Route::get('/offers/update', [OfferController::class, 'update']);
